@@ -21,13 +21,35 @@ stack<int> copyStack(stack<int> &input){
     return result;
 }
 
+void copyStackRecursively(stack<int> &input, stack<int> &result){
+    if(input.empty()) return;
+
+    int curr = input.top();
+    input.pop();
+    copyStackRecursively(input, result);
+    result.push(curr);
+}
+
 int main(){
+    // stack<int> st;
+    // st.push(1);
+    // st.push(2);
+    // st.push(3);
+    
+    // stack<int> result = copyStack(st);
+
+    // while(! result.empty()){
+    //     cout << result.top() << endl;
+    //     result.pop();
+    // }
+
     stack<int> st;
     st.push(1);
     st.push(2);
     st.push(3);
-
-    stack<int> result = copyStack(st);
+    
+    stack<int> result;
+    copyStackRecursively(st, result);
 
     while(! result.empty()){
         cout << result.top() << endl;
