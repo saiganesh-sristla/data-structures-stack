@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-vector<int> nge(vector<int> input, int n)
+vector<int> nse(vector<int> input, int n)
 {
     vector<int> output(n, -1);
     stack<int> st;
@@ -26,7 +26,7 @@ int main()
     vector<int> v = {2, 5, 2, 4, 2, 6, 4, 1};
     int n = v.size();
 
-    vector<int> result = nge(v, n);
+    vector<int> result = nse(v, n);
 
     cout << "Next smaller Elements: ";
     for (int i = 0; i < n; i++)
